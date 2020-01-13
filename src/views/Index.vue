@@ -67,60 +67,20 @@
                     </div>
                     <div id="agent-box">
                         <a
-                            :href="hrefArr2[0]"
-                            id="jj1"
+                            :href="item.url"
+                            :id="`jj${index + 1}`"
                             target="_blank"
                             class="agentData"
-                        ><img
+                            v-for="(item, index) in hrefArr2"
+                            :key="index"
+                        >
+                            <img
                                 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAVCAYAAABYHP4bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RUU4NDIxRUI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RUU4NDIxRkI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTg0MjFDQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFRTg0MjFEQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KY0oQAAAAXxJREFUeNq0lE8rRFEYxs+YjSxIiJLChgWysJsPMCz82cxK1j6BjXJLSTIiZK9Q/jQ1n4C1JSFGjYitUqQRHc+pd+rpdu6ce+fOvPVrZp57zvubtzlzElprFVAjIAc6wJ+qXEl53QVL1hVGZKEPvOvqasHW0ybpAm86Xs27RI3gXtemMkGiJLjUta20TXSu61Mp0z8hpy4PplV9qgRSZpIzsv+CA/AScwrT846DBtiKPvscGAOfVU7ggQy4oKxQ/n0WSX4sWS/4iDiJJ3tnwLdkV6CFD4NHG3KSDdIGV62QpFzXoMn2P1qmRSeSDYAvh2TVIrkFrZVuBpadSjYESgGSNVkzSdkNaHZdQUq+oX+yYfDjk2zIsynKCqA9zF1nkx1KNkpZVrI0ZQ+gLeylymSpyZFk42Bb3k/Q8yfQGdTLJTKsU7N9ynmSotz6Ko7IsElN98AsfX52SaKIDFuWE2euqp4w+6OIDDskeQXdYfdGFSk5gY+gP8q+fwEGAPgGbe4Owv7yAAAAAElFTkSuQmCC"
                                 alt=""
                                 style="vertical-align: middle;"
-                            ><span>代理1站</span></a><a
-                            id="jj2"
-                            :href="hrefArr2[1]"
-                            target="_blank"
-                            class="agentData"
-                        ><img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAVCAYAAABYHP4bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RUU4NDIxRUI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RUU4NDIxRkI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTg0MjFDQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFRTg0MjFEQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KY0oQAAAAXxJREFUeNq0lE8rRFEYxs+YjSxIiJLChgWysJsPMCz82cxK1j6BjXJLSTIiZK9Q/jQ1n4C1JSFGjYitUqQRHc+pd+rpdu6ce+fOvPVrZp57zvubtzlzElprFVAjIAc6wJ+qXEl53QVL1hVGZKEPvOvqasHW0ybpAm86Xs27RI3gXtemMkGiJLjUta20TXSu61Mp0z8hpy4PplV9qgRSZpIzsv+CA/AScwrT846DBtiKPvscGAOfVU7ggQy4oKxQ/n0WSX4sWS/4iDiJJ3tnwLdkV6CFD4NHG3KSDdIGV62QpFzXoMn2P1qmRSeSDYAvh2TVIrkFrZVuBpadSjYESgGSNVkzSdkNaHZdQUq+oX+yYfDjk2zIsynKCqA9zF1nkx1KNkpZVrI0ZQ+gLeylymSpyZFk42Bb3k/Q8yfQGdTLJTKsU7N9ynmSotz6Ko7IsElN98AsfX52SaKIDFuWE2euqp4w+6OIDDskeQXdYfdGFSk5gY+gP8q+fwEGAPgGbe4Owv7yAAAAAElFTkSuQmCC"
-                                alt=""
-                                style="vertical-align: middle;"
-                            ><span>代理2站</span></a><a
-                            id="jj3"
-                            :href="hrefArr2[2]"
-                            target="_blank"
-                            class="agentData"
-                        ><img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAVCAYAAABYHP4bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RUU4NDIxRUI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RUU4NDIxRkI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTg0MjFDQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFRTg0MjFEQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KY0oQAAAAXxJREFUeNq0lE8rRFEYxs+YjSxIiJLChgWysJsPMCz82cxK1j6BjXJLSTIiZK9Q/jQ1n4C1JSFGjYitUqQRHc+pd+rpdu6ce+fOvPVrZp57zvubtzlzElprFVAjIAc6wJ+qXEl53QVL1hVGZKEPvOvqasHW0ybpAm86Xs27RI3gXtemMkGiJLjUta20TXSu61Mp0z8hpy4PplV9qgRSZpIzsv+CA/AScwrT846DBtiKPvscGAOfVU7ggQy4oKxQ/n0WSX4sWS/4iDiJJ3tnwLdkV6CFD4NHG3KSDdIGV62QpFzXoMn2P1qmRSeSDYAvh2TVIrkFrZVuBpadSjYESgGSNVkzSdkNaHZdQUq+oX+yYfDjk2zIsynKCqA9zF1nkx1KNkpZVrI0ZQ+gLeylymSpyZFk42Bb3k/Q8yfQGdTLJTKsU7N9ynmSotz6Ko7IsElN98AsfX52SaKIDFuWE2euqp4w+6OIDDskeQXdYfdGFSk5gY+gP8q+fwEGAPgGbe4Owv7yAAAAAElFTkSuQmCC"
-                                alt=""
-                                style="vertical-align: middle;"
-                            ><span>代理3站</span></a><a
-                            id="jj4"
-                            :href="hrefArr2[3]"
-                            target="_blank"
-                            class="agentData"
-                        ><img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAVCAYAAABYHP4bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RUU4NDIxRUI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RUU4NDIxRkI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTg0MjFDQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFRTg0MjFEQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KY0oQAAAAXxJREFUeNq0lE8rRFEYxs+YjSxIiJLChgWysJsPMCz82cxK1j6BjXJLSTIiZK9Q/jQ1n4C1JSFGjYitUqQRHc+pd+rpdu6ce+fOvPVrZp57zvubtzlzElprFVAjIAc6wJ+qXEl53QVL1hVGZKEPvOvqasHW0ybpAm86Xs27RI3gXtemMkGiJLjUta20TXSu61Mp0z8hpy4PplV9qgRSZpIzsv+CA/AScwrT846DBtiKPvscGAOfVU7ggQy4oKxQ/n0WSX4sWS/4iDiJJ3tnwLdkV6CFD4NHG3KSDdIGV62QpFzXoMn2P1qmRSeSDYAvh2TVIrkFrZVuBpadSjYESgGSNVkzSdkNaHZdQUq+oX+yYfDjk2zIsynKCqA9zF1nkx1KNkpZVrI0ZQ+gLeylymSpyZFk42Bb3k/Q8yfQGdTLJTKsU7N9ynmSotz6Ko7IsElN98AsfX52SaKIDFuWE2euqp4w+6OIDDskeQXdYfdGFSk5gY+gP8q+fwEGAPgGbe4Owv7yAAAAAElFTkSuQmCC"
-                                alt=""
-                                style="vertical-align: middle;"
-                            ><span>代理4站</span></a><a
-                            id="jj5"
-                            :href="hrefArr2[4]"
-                            target="_blank"
-                            class="agentData"
-                        ><img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAVCAYAAABYHP4bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RUU4NDIxRUI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RUU4NDIxRkI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTg0MjFDQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFRTg0MjFEQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KY0oQAAAAXxJREFUeNq0lE8rRFEYxs+YjSxIiJLChgWysJsPMCz82cxK1j6BjXJLSTIiZK9Q/jQ1n4C1JSFGjYitUqQRHc+pd+rpdu6ce+fOvPVrZp57zvubtzlzElprFVAjIAc6wJ+qXEl53QVL1hVGZKEPvOvqasHW0ybpAm86Xs27RI3gXtemMkGiJLjUta20TXSu61Mp0z8hpy4PplV9qgRSZpIzsv+CA/AScwrT846DBtiKPvscGAOfVU7ggQy4oKxQ/n0WSX4sWS/4iDiJJ3tnwLdkV6CFD4NHG3KSDdIGV62QpFzXoMn2P1qmRSeSDYAvh2TVIrkFrZVuBpadSjYESgGSNVkzSdkNaHZdQUq+oX+yYfDjk2zIsynKCqA9zF1nkx1KNkpZVrI0ZQ+gLeylymSpyZFk42Bb3k/Q8yfQGdTLJTKsU7N9ynmSotz6Ko7IsElN98AsfX52SaKIDFuWE2euqp4w+6OIDDskeQXdYfdGFSk5gY+gP8q+fwEGAPgGbe4Owv7yAAAAAElFTkSuQmCC"
-                                alt=""
-                                style="vertical-align: middle;"
-                            ><span>代理5站</span></a><a
-                            id="jj6"
-                            :href="hrefArr2[5]"
-                            target="_blank"
-                            class="agentData"
-                        ><img
-                                src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABoAAAAVCAYAAABYHP4bAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyFpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQyIDc5LjE2MDkyNCwgMjAxNy8wNy8xMy0wMTowNjozOSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIChXaW5kb3dzKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4RUU4NDIxRUI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4RUU4NDIxRkI1NkYxMUU4ODg1Q0Q4QkE1NDhDRjBGMyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjhFRTg0MjFDQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjhFRTg0MjFEQjU2RjExRTg4ODVDRDhCQTU0OENGMEYzIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+KY0oQAAAAXxJREFUeNq0lE8rRFEYxs+YjSxIiJLChgWysJsPMCz82cxK1j6BjXJLSTIiZK9Q/jQ1n4C1JSFGjYitUqQRHc+pd+rpdu6ce+fOvPVrZp57zvubtzlzElprFVAjIAc6wJ+qXEl53QVL1hVGZKEPvOvqasHW0ybpAm86Xs27RI3gXtemMkGiJLjUta20TXSu61Mp0z8hpy4PplV9qgRSZpIzsv+CA/AScwrT846DBtiKPvscGAOfVU7ggQy4oKxQ/n0WSX4sWS/4iDiJJ3tnwLdkV6CFD4NHG3KSDdIGV62QpFzXoMn2P1qmRSeSDYAvh2TVIrkFrZVuBpadSjYESgGSNVkzSdkNaHZdQUq+oX+yYfDjk2zIsynKCqA9zF1nkx1KNkpZVrI0ZQ+gLeylymSpyZFk42Bb3k/Q8yfQGdTLJTKsU7N9ynmSotz6Ko7IsElN98AsfX52SaKIDFuWE2euqp4w+6OIDDskeQXdYfdGFSk5gY+gP8q+fwEGAPgGbe4Owv7yAAAAAElFTkSuQmCC"
-                                alt=""
-                                style="vertical-align: middle;"
-                            ><span>代理6站</span></a>
+                            >
+                            <span>{{item.name}}</span>
+                        </a>
                     </div>
                 </div>
                 <div
@@ -403,6 +363,7 @@
 </template>
 
 <script>
+import { fetchIndexData } from "@/api/index.js";
 export default {
     name: "index",
     data() {
@@ -415,9 +376,15 @@ export default {
         this.hrefArr1 = "https://188hg0.com/|https://188hg1.com|https://188hg2.com|https://188hg3.com|https://188hg4.com".split(
             "|"
         );
-        this.hrefArr2 = "https://188hg0.com/commonPage/signUp-agent.html|https://188hg1.com/acenter/passport/login.html|https://188hg2.com/commonPage/signUp-agent.html|https://188hg3.com/acenter/passport/login.html|https://188hg4.com/commonPage/signUp-agent.html|https://188hg5.com/acenter/passport/login.html|".split(
-            "|"
-        );
+        // this.hrefArr2 = "https://188hg0.com/commonPage/signUp-agent.html|https://188hg1.com/acenter/passport/login.html|https://188hg2.com/commonPage/signUp-agent.html|https://188hg3.com/acenter/passport/login.html|https://188hg4.com/commonPage/signUp-agent.html|https://188hg5.com/acenter/passport/login.html|".split(
+        //     "|"
+        // );
+
+        fetchIndexData().then(res => {
+            const { indexLine = [], indexAgent = [] } = res;
+            this.hrefArr2 = indexAgent;
+            console.log(indexLine, indexAgent);
+        });
     }
 };
 </script>

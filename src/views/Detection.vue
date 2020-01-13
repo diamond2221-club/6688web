@@ -53,9 +53,7 @@
                         />
                         <div id="textButtonHolder">
                             <p id="text">
-                                </br>&nbsp;扫</br>&nbsp;一</br>&nbsp;扫</br>
-                                <br>
-
+                                <br/>&nbsp;扫<br/>&nbsp;一<br/>&nbsp;扫<br/>
                             </p>
                         </div>
                     </div>
@@ -66,12 +64,12 @@
 </template>
 
 <script>
+import { fetchIndexData } from "@/api/index.js";
+
 export default {
     data() {
         return {
-            x: "188hg0.com|188hg1.com,|188hg2.com|188hg3.com|188hg4.com|188hg5.com|188hg6.com|188hg7.com|188hg8.com|188hg9.com|".split(
-                "|"
-            ),
+            urls: [],
             url: "",
             timeOut: 0,
             i: 0
@@ -79,12 +77,12 @@ export default {
     },
     methods: {
         get() {
-            let { x, i, randomNum } = this;
-            this.url = x[i];
+            let { urls, i, randomNum } = this;
+            this.url = urls[i].url;
             this.timeOut = randomNum(26, 89) + "ms";
 
             i++;
-            if (i >= x.length) {
+            if (i >= urls.length) {
                 i = 0;
             }
             this.i = i;
@@ -108,8 +106,12 @@ export default {
         }
     },
     created() {
-        this.get();
-        window.setInterval(this.get, 5000);
+        fetchIndexData().then(res => {
+            const { testing = [] } = res;
+            this.urls = testing;
+            this.get();
+            window.setInterval(this.get, 5000);
+        });
     }
 };
 </script>

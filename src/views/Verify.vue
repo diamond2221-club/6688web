@@ -18,6 +18,7 @@
                             autofocus="autofocus"
                             v-model="urlVal"
                             autocomplete="off"
+                            @keydown.enter="get"
                         >
                     </div>
                     <input
@@ -31,7 +32,8 @@
                 <p
                     id="checkerStatus"
                     :class="tipClass"
-                >{{tipText}}</p>
+                    v-html='tipText'
+                ></p>
                 <!-- class="no_input green" -->
             </div>
         </div>
@@ -39,34 +41,27 @@
 </template>
 
 <script>
+import { fetchIndexData } from "@/api/index.js";
+
 export default {
     data() {
         return {
+            urls: [],
             urlVal: "",
-            tipText: "",
+            tipText: "&emsp;",
             tipClass: "no_input green"
         };
     },
     methods: {
         get() {
-            const xx =
-                "188hg1.com|188hg2.com|188hg3.com|188hg4.com|188hg5.com|188hg6.com|188hg7.com|188hg8.com|188hg9.com|www188hg.com|www-188hg.com|188hg.bet|188hg.com|188hg.cc|vip188hg.com|188188hg.com|188mq.com|188by.com|188cr.com|0088mq.com|ra199.com|ra600.com|hg0088mq.com|1717mq.com|ra199.cc|ra600.cc|188hg.net|188hg.cc|6686mq.com|rr58.com|188hg.co|188hg.biz|188hg.org|188hg.me|188pk.cc|188188001.com|188188002.com|";
-            const x = xx.split("|");
-            let yzz;
-            yzz = this.urlVal;
-            if (yzz == "") {
+            const { urls, urlVal } = this;
+            if (urlVal == "") {
                 this.tipText = "请输入要检测的域名";
                 this.tipClass = "class no_input";
                 return;
             }
-            let zz = false;
-            for (let i = 0; i < x.length; i++) {
-                if (x[i] == yzz || "www." + x[i] == yzz) {
-                    zz = true;
-                    break;
-                }
-            }
-            if (zz) {
+
+            if (urls.find(item => item.url.split('://')[1] == urlVal)) {
                 this.tipText = "此域名通过认证，欢迎访问我公司网站";
                 this.tipClass = "class no_input green";
             } else {
@@ -74,6 +69,12 @@ export default {
                 this.tipClass = "class no_input red";
             }
         }
+    },
+    created() {
+        fetchIndexData().then(res => {
+            const { urlAuth = [] } = res;
+            this.urls = urlAuth;
+        });
     }
 };
 </script>
