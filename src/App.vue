@@ -55,7 +55,7 @@ export default {
             document
                 .querySelector('meta[name="description"]')
                 .setAttribute("content", descript);
-            this.logoUrl = `http://47.107.229.128/static/uploads/pic/${logo}`;
+            this.logoUrl = `http://47.107.229.128/static/uploads/logo/${logo}`;
             this.copyright = copyright;
         });
     }
