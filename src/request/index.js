@@ -13,7 +13,7 @@ const instance = Axios.create({
 instance.interceptors.request.use(
     config => {
         if (config.method === "post") {
-            config.data = qs.stringify(config.data)
+            config.data = qs.stringify(config.data);
         }
         return config;
     },
@@ -32,6 +32,7 @@ instance.interceptors.response.use(
     }
 );
 
+export let request1 = instance;
 
 export default {
     get: (url, params = {}, headers = {}) => {
@@ -44,12 +45,14 @@ export default {
                 .then(data => {
                     let res = data;
                     if (Array.isArray(res)) {
-                        reject(res[0])
+                        reject(res[0]);
                     } else {
                         if (res && res.status === 1) {
                             resolve(res.data);
                         } else {
-                            reject(res || { message: `系统出错了,结果为： ${res}` });
+                            reject(
+                                res || { message: `系统出错了,结果为： ${res}` }
+                            );
                         }
                     }
                 })
@@ -65,12 +68,14 @@ export default {
                 .then(data => {
                     let res = data;
                     if (Array.isArray(res)) {
-                        reject(res[0])
+                        reject(res[0]);
                     } else {
                         if (res && res.status === 1) {
                             resolve(res.data);
                         } else {
-                            reject(res || { message: `系统出错了,结果为： ${res}` });
+                            reject(
+                                res || { message: `系统出错了,结果为： ${res}` }
+                            );
                         }
                     }
                 })

@@ -1,12 +1,9 @@
 <template>
     <div id="app">
-        <div
-            id="main"
-            :class="showSilde ? 'rightMove' : 'canScroll'"
-        >
-            <Header @toggleMenu="toggleMenu" />
+        <div id="main" :class="showSilde ? 'rightMove' : 'canScroll'">
+            <Header @toggleMenu="toggleMenu" :logoUrl="logoUrl" />
             <router-view />
-            <Footer />
+            <Footer :copyright="copyright" />
             <!-- <RightHeader /> -->
             <div
                 class="mask-layer"
@@ -21,6 +18,9 @@
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
 import RightHeader from "@/components/RightHeader.vue";
+
+import { fetchWebsiteConf } from "@/api/index.js";
+
 export default {
     components: {
         Header,
@@ -29,14 +29,35 @@ export default {
     },
     data() {
         return {
-            showSilde: false
+            showSilde: false,
+            logoUrl: "../assets/images/1565589442645015.png",
+            copyright: "COPYRIGHT©2019 188HG 188皇冠 ALL RIGHTS RESERVED 版权所有"
         };
+    },
+    watch: {
+        $route(newProp, oldProp) {
+            if (newProp.path !== oldProp.path) this.showSilde = false
+        }
     },
     methods: {
         toggleMenu(newState) {
             this.showSilde =
                 typeof newState !== "undefined" ? newState : !this.showSilde;
         }
+    },
+    created() {
+        fetchWebsiteConf().then(res => {
+            const { title, keywords, descript, logo, copyright } = res;
+            document.title = title;
+            document
+                .querySelector('meta[name="keywords"]')
+                .setAttribute("content", keywords);
+            document
+                .querySelector('meta[name="description"]')
+                .setAttribute("content", descript);
+            this.logoUrl = `http://47.107.229.128/static/uploads/pic/${logo}`;
+            this.copyright = copyright;
+        });
     }
 };
 </script>

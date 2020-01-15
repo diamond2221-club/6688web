@@ -1,13 +1,14 @@
 <template>
     <footer id="mainFooter">
         <p id="copyright">
-            COPYRIGHT©2019 188HG 188皇冠 ALL RIGHTS RESERVED 版权所有
+            {{ copyright }}
         </p>
     </footer>
 </template>
 <script>
 export default {
-    name: "Footer"
+    name: "Footer",
+    props: ["copyright"]
 };
 </script>
 

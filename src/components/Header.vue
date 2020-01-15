@@ -5,7 +5,7 @@
                 <div id="">
                     <a href="/">
                         <img
-                            src="../assets/images/1565589442645015.png"
+                            :src="logoUrl"
                             alt=""
                         />
                     </a>
@@ -39,6 +39,7 @@
 <script>
 export default {
     name: "Header",
+    props: ["logoUrl"],
     data() {
         return {};
     },

@@ -53,7 +53,7 @@
                         />
                         <div id="textButtonHolder">
                             <p id="text">
-                                <br/>&nbsp;扫<br/>&nbsp;一<br/>&nbsp;扫<br/>
+                                <br />&nbsp;扫<br />&nbsp;一<br />&nbsp;扫<br />
                             </p>
                         </div>
                     </div>
@@ -160,7 +160,6 @@ export default {
     display: flex;
     -ms-flex-flow: row wrap;
     flex-flow: row wrap;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     -ms-flex-pack: center;
     justify-content: center;
@@ -170,7 +169,6 @@ export default {
 }
 #detection #wrapper1 #detectionHolder #detectionDataHolder .detectionData {
     width: 230px;
-    -ms-flex-positive: 1;
     flex-grow: 1;
     background-color: hsla(0, 0%, 93%, 0.3);
     padding: 10px;
@@ -289,7 +287,6 @@ export default {
     #detectionDataHolder
     .detectionData
     .time {
-    color: #000;
     color: #fff;
     font-size: 14px;
     text-align: left;
