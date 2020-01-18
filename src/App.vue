@@ -1,14 +1,14 @@
 <template>
-    <div id="app">
+    <div id="app" @scroll="toggleMenu(false)">
         <div id="main" :class="showSilde ? 'rightMove' : 'canScroll'">
             <Header @toggleMenu="toggleMenu" :logoUrl="logoUrl" />
             <router-view />
             <Footer :copyright="copyright" />
-            <!-- <RightHeader /> -->
             <div
                 class="mask-layer"
                 v-if="showSilde"
                 @click="toggleMenu(false)"
+                @touchstart.prevent="toggleMenu(false)"
             ></div>
         </div>
     </div>
@@ -17,7 +17,6 @@
 <script>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import RightHeader from "@/components/RightHeader.vue";
 
 import { fetchWebsiteConf } from "@/api/index.js";
 
@@ -25,7 +24,6 @@ export default {
     components: {
         Header,
         Footer,
-        RightHeader
     },
     data() {
         return {
@@ -43,11 +41,15 @@ export default {
         toggleMenu(newState) {
             this.showSilde =
                 typeof newState !== "undefined" ? newState : !this.showSilde;
+        },
+        resizeWindow() {
+            if (window.innerWidth >= 968) this.toggleMenu(false)
         }
     },
     created() {
+        window.addEventListener("resize", this.resizeWindow)
         fetchWebsiteConf().then(res => {
-            const { title, keywords, descript, logo, copyright } = res;
+            const { title, keywords, descript, logo, copyright, kefu } = res;
             document.title = title;
             document
                 .querySelector('meta[name="keywords"]')
@@ -57,7 +59,13 @@ export default {
                 .setAttribute("content", descript);
             this.logoUrl = `http://47.107.229.128/static/uploads/logo/${logo}`;
             this.copyright = copyright;
+            this.$store.commit("setWebSiteConf", {...this.$store.websiteConf, kefuUrl: kefu })
         });
+    },
+    mounted () {
+    },
+    beforeDestroy() {
+        window.removeEventListener("resize", this.resizeWindow)
     }
 };
 </script>

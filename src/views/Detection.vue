@@ -14,7 +14,7 @@
                     style=""
                 ><a
                         id="ljj"
-                        :href="`https://${url}`"
+                        :href="`${url}`"
                         target="_blank"
                         class="detectionData"
                         style="height: 50px;"
@@ -176,6 +176,7 @@ export default {
     margin: 3px;
     box-sizing: border-box;
     text-decoration: none;
+    padding-right: 15px;
 }
 #detection
     #wrapper1
@@ -306,10 +307,15 @@ export default {
 #detection #wrapper1 #detectionHolder #reCheck:hover {
     background-color: #e58504;
 }
-@media screen and (max-width: 619px) {
+@media screen and (max-width: 719px) {
     #detection #wrapper1 #detectionHolder #reCheck {
         width: 100%;
         height: 40px;
+    }
+}
+@media screen and (max-width: 375px) {
+    #wzzz {
+        font-size: 14px;
     }
 }
 #detection #wrapper1 #detectionHolder #infoHolder {
@@ -356,6 +362,10 @@ export default {
     justify-content: center;
     padding: 51.5px 20px;
     border-left: 1px solid #252323;
+    img {
+        display: inline-block;
+        margin-right: 15px;
+    }
 }
 @media screen and (max-width: 853px) {
     #detection #wrapper1 #detectionHolder #infoHolder #info2 {

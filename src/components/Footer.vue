@@ -19,9 +19,10 @@ export default {
     bottom: 0;
     right: 0;
     background-color: #151515;
+    z-index: 2;
     #copyright {
         font-size: 12px;
-        color: hsla(0, 0%, 40%, 0.502);
+        color: hsla(0, 2%, 81%, 0.502);
         text-transform: uppercase;
         line-height: 2.35;
         text-align: center;

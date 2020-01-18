@@ -1,70 +1,123 @@
 <template>
-    <div>
+    <div class="header-wrap">
         <header id="mainHeader">
             <div id="wrapper1">
                 <div id="">
                     <a href="/">
-                        <img
-                            :src="logoUrl"
-                            alt=""
-                        />
+                        <img :src="logoUrl" alt="" />
                     </a>
                 </div>
-                <div
-                    class="nav_icon"
-                    @click="toggleMenu"
-                >
-                </div>
+                <div class="nav_icon" @click="toggleMenu"></div>
                 <nav id="navigation">
-                    <router-link
-                        tag="a"
-                        v-for="(route) in routes"
-                        :key="route.path"
-                        :to="route.path"
-                    >{{route.meta.title}}</router-link>
+                    <template v-for="route in allRoutes">
+                        <router-link
+                            tag="a"
+                            :key="route.path"
+                            :to="route.path"
+                            v-if="route.meta && route.meta.vue"
+                        >
+                            {{ route.meta.title }}
+                        </router-link>
+                        <a
+                            v-else
+                            :key="route.url"
+                            :href="route.url"
+                            target="_blank"
+                            >{{ route.name }}</a
+                        >
+                    </template>
+                    <a :href="kefuUrl" target="_blank" v-if="kefuUrl">
+                        <span>在线客服</span>
+                        <span id="message">
+                            <span id="icon"></span>
+                            <span id="iconHover"></span>
+                        </span>
+                    </a>
                 </nav>
             </div>
         </header>
         <div id="rightNav">
-            <router-link
-                tag="a"
-                v-for="(route) in routes"
-                :key="route.path"
-                :to="route.path"
-            >{{route.meta.title}}</router-link>
+            <template v-for="route in allRoutes">
+                <router-link
+                    tag="a"
+                    :key="route.path"
+                    :to="route.path"
+                    v-if="route.meta && route.meta.vue"
+                >
+                    <span class="text">
+                        {{ route.meta.title }}
+                    </span>
+                </router-link>
+                <a v-else :key="route.url" :href="route.url" target="_blank">
+                    <span class="text">
+                        {{ route.name }}
+                    </span>
+                </a>
+            </template>
+            <a :href="kefuUrl" target="_blank" v-if="kefuUrl">
+                <span>在线客服</span>
+            </a>
         </div>
     </div>
 </template>
 
 <script>
+import { fetchNavData } from "@/api/index.js";
+import { mapState } from "vuex";
+
 export default {
     name: "Header",
     props: ["logoUrl"],
     data() {
-        return {};
+        return {
+            allRoutes: [],
+            kefuUrl: ""
+        };
     },
     methods: {
         toggleMenu() {
             this.$emit("toggleMenu");
         }
     },
-    computed: {
-        routes() {
-            return this.$router.options.routes.filter(route => !route.hidden);
+    watch: {
+        websiteConf(newProp) {
+            if (newProp.kefuUrl) this.kefuUrl = newProp.kefuUrl;
         }
     },
-    created() {}
+    computed: {
+        ...mapState(["websiteConf"])
+    },
+    created() {
+        fetchNavData().then(res => {
+            this.allRoutes = [
+                ...this.$router.options.routes.filter(route => !route.hidden),
+                ...res
+            ];
+        });
+    }
 };
 </script>
 
 <style scoped lang="scss">
+.header-wrap {
+    position: relative;
+    z-index: 2;
+}
 #mainHeader {
     background-color: #222;
+}
+@media screen and (min-width: 969px) {
+    #rightNav {
+        display: none;
+    }
 }
 @media screen and (max-width: 968px) {
     #mainHeader {
         box-sizing: border-box;
         position: relative;
+    }
+    #rightNav {
+        display: flex;
     }
 }
 #mainHeader #wrapper1 {
@@ -202,13 +255,14 @@ export default {
 }
 
 #rightNav {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     right: 0;
     background: #151515;
     width: 17%;
     height: 100%;
     z-index: -1;
+    flex-direction: column;
 }
 @media screen and (max-width: 968px) {
     #rightNav {
@@ -236,7 +290,6 @@ export default {
 }
 #rightNav a {
     display: block;
-    width: 45%;
     margin: 0 auto;
     margin-top: 25px;
     color: #fff;
@@ -244,8 +297,9 @@ export default {
     text-align: center;
     text-decoration: none;
     white-space: nowrap;
+    border-bottom: 2px solid transparent;
 }
-#rightNav a[data-v-c5122748]:hover {
+#rightNav a:hover {
     color: #ff9200;
     border-bottom: 2px solid #ff9200;
 }
@@ -267,4 +321,3 @@ export default {
     text-align: center;
 }
 </style>
-

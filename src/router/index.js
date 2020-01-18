@@ -12,7 +12,8 @@ const routes = [
     hidden: false,
     meta: {
       documentTitle: "188HG导航站-188皇冠-线路登陆",
-      title: "导航首页"
+      title: "导航首页",
+      vue: true
     }
   },
   {
@@ -25,7 +26,8 @@ const routes = [
     hidden: false,
     meta: {
       documentTitle: "线路检测-188HG导航站-188皇冠-线路登陆",
-      title: "线路检测"
+      title: "线路检测",
+      vue: true
     }
   },
   {
@@ -38,7 +40,8 @@ const routes = [
     hidden: false,
     meta: {
       documentTitle: "域名认证-188HG导航站-188皇冠-线路登陆",
-      title: "域名认证"
+      title: "域名认证",
+      vue: true
     }
   },
   {
@@ -54,7 +57,7 @@ const router = new VueRouter({
   routes
 })
 router.afterEach((to, from) => {
-  document.title = to.meta.documentTitle || '188HG导航站-188皇冠-线路登陆'
+  // document.title = to.meta.documentTitle || '188HG导航站-188皇冠-线路登陆'
 })
 
 export default router

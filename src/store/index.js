@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    websiteConf: {}
   },
   mutations: {
+    setWebSiteConf(state, conf) {
+      state.websiteConf = conf;
+    }
   },
   actions: {
   },

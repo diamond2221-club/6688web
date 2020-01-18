@@ -1,6 +1,10 @@
 <template>
-    <div id="index">
-        <div id="wrapper1">
+    <div
+        id="index"
+        v-if="!loading"
+        :style="{ backgroundImage: bgType == 2 ? `url(${bgUrl})` : '' }"
+    >
+        <div id="wrapper1" class="wrapper1">
             <div
                 id="wrapper2"
                 style="opacity: 1; transform: translate(0px, 0px);"
@@ -445,28 +449,83 @@
                         </div>
                     </div>
                 </div>
+                <div class="winsyb"></div>
             </div>
+        </div>
+        <div class="video-bg" v-if="bgType == 1">
+            <div class="video-wrap"></div>
+            <video
+                autoplay
+                muted
+                loop
+                :src="bgUrl"
+                id="videoBox"
+                ref="videoBox"
+                webkit-playsinline
+                playsinline
+            >
+                <!-- <source :src="bgUrl" type="video/mp4"  /> -->
+            </video>
         </div>
     </div>
 </template>
 
 <script>
-import { fetchIndexData, fetchWebsiteConf } from "@/api/index.js";
+import { fetchIndexData, fetchIndexBg } from "@/api/index.js";
+import { isMobile } from "@/utils/index.js";
+
 export default {
     name: "index",
     data() {
         return {
             hrefArr1: [],
-            hrefArr2: []
+            hrefArr2: [],
+            bgUrl: "",
+            bgType: 1, /* 1 视频 2 图片 */
+            loading: false
         };
     },
     created() {
+        this.loading = true;
         fetchIndexData().then(res => {
             const { indexLine = [], indexAgent = [] } = res;
             this.hrefArr1 = indexLine;
             this.hrefArr2 = indexAgent;
+            this.loading = false;
         });
+        fetchIndexBg().then(res => {
+            const res1 = res.filter(item => item.status == 1)
+            let bgUrl = '';
+            let bgType = 1;
+            if (res1.length !== res.length) {
+                if (res1[0].indexType == 2) {
+                    bgUrl = `http://47.107.229.128/static/uploads/pic/${res1[0].pic}`
+                    bgType = 2;
+                } else {
+                    bgUrl = res1[0].video
+                    bgType = 1;
+                }
+            } else {
+                bgUrl = require('@/assets/images/1577654005133740.png')
+                bgType = 2;
+            }
+            this.bgUrl = bgUrl;
+            this.bgType = bgType;
 
+            setTimeout(() => {
+                const videoBox = document.querySelector("#videoBox")
+                if (videoBox) {
+                    if (isMobile()) {
+                        videoBox.style.width = "100%";
+                        videoBox.style.height = "100%";
+                    }
+                }
+            }, 800);
+
+        })
+
+    },
+    mounted() {
     }
 };
 </script>
@@ -474,9 +533,51 @@ export default {
 <style lang="scss" scoped>
 #index {
     background-color: rgb(25, 26, 30);
-    background-image: url("../assets/images/1577654005133740.png");
     background-position: 50% top;
     background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    .wrapper1,
+    .winsyb {
+        position: relative;
+        z-index: 2;
+    }
+    .winsyb {
+        padding-bottom: 10%;
+    }
+    .video-bg {
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        top: 0;
+        overflow: visible;
+        z-index: 1;
+        .video-wrap {
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            z-index: 2;
+        }
+        video {
+            position: relative;
+            z-index: 1;
+            display: block;
+            min-width: 100%;
+            min-height: 100%;
+            height: auto;
+            width: auto;
+            object-fit: cover;
+            overflow: hidden;
+            source {
+                min-width: 100%;
+                min-height: 100%;
+                height: auto;
+                width: auto;
+            }
+        }
+    }
 }
 #index.mainContent {
     background-image: url(/static/img/index-background.25eb496.jpg);
@@ -505,7 +606,7 @@ export default {
 #index #wrapper1 #wrapper2 {
     width: 100%;
     height: auto;
-    margin: 18% 0 0;
+    margin: 8% 0 0;
     opacity: 0;
     transform: translateY(50%);
     transition: opacity 1s ease-in-out, transform 1s ease-in-out;
@@ -521,6 +622,13 @@ export default {
 @media screen and (max-width: 1280px) {
     #index #wrapper1 #wrapper2 #title {
         background-position: 50%;
+    }
+    #index {
+        .video-bg {
+            video {
+                height: 100%;
+            }
+        }
     }
 }
 @media screen and (max-width: 880px) {

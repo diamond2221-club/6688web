@@ -166,6 +166,8 @@ export default {
     font-size: 18px;
     color: #000;
     cursor: pointer;
+    padding: 0 12px;
+    box-sizing: border-box;
 }
 #verify #wrapper1 #checkerHolder #checker #checkerButton:hover {
     background-color: #e58504;
