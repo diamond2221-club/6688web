@@ -29,7 +29,7 @@ export default {
         return {
             showSilde: false,
             logoUrl: "../assets/images/1565589442645015.png",
-            copyright: "COPYRIGHT©2019 188HG 188皇冠 ALL RIGHTS RESERVED 版权所有"
+            copyright: "COPYRIGHT©2019 大发娱乐 20086.COM ALL RIGHTS RESERVED 版权所有"
         };
     },
     watch: {
@@ -57,7 +57,7 @@ export default {
             document
                 .querySelector('meta[name="description"]')
                 .setAttribute("content", descript);
-            this.logoUrl = `http://47.107.229.128/static/uploads/logo/${logo}`;
+            this.logoUrl = `http://admin.937093.com/static/uploads/logo/${logo}`;
             this.copyright = copyright;
             this.$store.commit("setWebSiteConf", {...this.$store.websiteConf, kefuUrl: kefu })
         });

@@ -1,8 +1,8 @@
 import Axios from "axios";
 import qs from "querystring";
-
 const instance = Axios.create({
-    baseURL: "/",
+    // baseURL: "/",
+    baseURL: process.env.NODE_ENV === 'production' ? "https://admin.92820.cc/" : '/',
     timeout: 25000,
     headers: {
         "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8"

@@ -1,1 +1,1 @@
-POST https://www.diamond2221.club/api/getIndexInfo
+GET  http://localhost:8081/api/v1/indexType
