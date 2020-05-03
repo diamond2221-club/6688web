@@ -12,7 +12,7 @@
                 <div
                     id="title"
                     :style="{
-                        backgroundImage: `url(${require('@/assets/images/1566887589583980.png')})`
+                        backgroundImage: `url(${require('@/assets/images/1566887589583980.png')})`,
                     }"
                 ></div>
                 <div id="mouse"></div>
@@ -44,7 +44,7 @@
                                     <span
                                         class="flag"
                                         :style="{
-                                            backgroundImage: `url(http://47.107.229.128/static/uploads/pic/${item.pic})`
+                                            backgroundImage: `url(http://admin.937093.com/static/uploads/pic/${item.pic})`,
                                         }"
                                     >
                                     </span>
@@ -90,7 +90,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233617300592.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233617300592.png')})`,
                                         }"
                                     ></span
                                     ><span>中国银行</span></a
@@ -103,7 +103,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233639546573.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233639546573.png')})`,
                                         }"
                                     ></span
                                     ><span>工商银行</span></a
@@ -116,7 +116,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233659954169.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233659954169.png')})`,
                                         }"
                                     ></span
                                     ><span>建设银行</span></a
@@ -129,7 +129,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233670589219.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233670589219.png')})`,
                                         }"
                                     ></span
                                     ><span>农业银行</span></a
@@ -142,7 +142,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233680906487.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233680906487.png')})`,
                                         }"
                                     ></span
                                     ><span>邮政储蓄</span></a
@@ -155,7 +155,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233692240919.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233692240919.png')})`,
                                         }"
                                     ></span
                                     ><span>银联</span></a
@@ -168,7 +168,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233703394296.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233703394296.png')})`,
                                         }"
                                     ></span
                                     ><span>支付宝</span></a
@@ -181,7 +181,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233763416205.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233763416205.png')})`,
                                         }"
                                     ></span
                                     ><span>QQ钱包</span></a
@@ -194,7 +194,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565233755628903.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565233755628903.png')})`,
                                         }"
                                     ></span
                                     ><span>微信支付</span></a
@@ -213,7 +213,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234399614500.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234399614500.png')})`,
                                         }"
                                     ></span
                                     ><span>百度</span></a
@@ -226,7 +226,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234416329155.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234416329155.png')})`,
                                         }"
                                     ></span
                                     ><span>谷歌</span></a
@@ -239,7 +239,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234443831543.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234443831543.png')})`,
                                         }"
                                     ></span
                                     ><span>搜狗</span></a
@@ -252,7 +252,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234464939334.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234464939334.png')})`,
                                         }"
                                     ></span
                                     ><span>新浪</span></a
@@ -265,7 +265,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234488464296.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234488464296.png')})`,
                                         }"
                                     ></span
                                     ><span>YaHoo</span></a
@@ -278,7 +278,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234502145102.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234502145102.png')})`,
                                         }"
                                     ></span
                                     ><span>网易</span></a
@@ -291,7 +291,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234531595302.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234531595302.png')})`,
                                         }"
                                     ></span
                                     ><span>360</span></a
@@ -304,7 +304,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234549109750.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234549109750.png')})`,
                                         }"
                                     ></span
                                     ><span>QQ搜索</span></a
@@ -317,7 +317,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565234575996316.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565234575996316.png')})`,
                                         }"
                                     ></span
                                     ><span>搜房网</span></a
@@ -336,7 +336,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235109426348.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235109426348.png')})`,
                                         }"
                                     ></span
                                     ><span>网易新闻</span></a
@@ -349,7 +349,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235128711523.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235128711523.png')})`,
                                         }"
                                     ></span
                                     ><span>百度新闻</span></a
@@ -362,7 +362,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235148473532.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235148473532.png')})`,
                                         }"
                                     ></span
                                     ><span>人民网</span></a
@@ -375,7 +375,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235168771284.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235168771284.png')})`,
                                         }"
                                     ></span
                                     ><span>腾讯新闻</span></a
@@ -388,7 +388,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235191409189.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235191409189.png')})`,
                                         }"
                                     ></span
                                     ><span>CCTV新闻</span></a
@@ -401,7 +401,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235214371268.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235214371268.png')})`,
                                         }"
                                     ></span
                                     ><span>UC新闻</span></a
@@ -414,7 +414,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235246165145.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235246165145.png')})`,
                                         }"
                                     ></span
                                     ><span>今日头条</span></a
@@ -427,7 +427,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235255403246.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235255403246.png')})`,
                                         }"
                                     ></span
                                     ><span>凤凰资讯</span></a
@@ -440,7 +440,7 @@
                                     ><span
                                         class="icon"
                                         :style="{
-                                            backgroundImage: `url(${require('@/assets/images/1565235283978074.png')})`
+                                            backgroundImage: `url(${require('@/assets/images/1565235283978074.png')})`,
                                         }"
                                     ></span
                                     ><span>环球时报</span></a
@@ -481,52 +481,53 @@ export default {
             hrefArr1: [],
             hrefArr2: [],
             bgUrl: "",
-            bgType: 1, /* 1 视频 2 图片 */
-            loading: false
+            bgType: 1 /* 1 PC视频 2 PC图片 3 M视频 4 M图片 */,
+            loading: false,
         };
     },
     created() {
         this.loading = true;
-        fetchIndexData().then(res => {
+        fetchIndexData().then((res) => {
             const { indexLine = [], indexAgent = [] } = res;
             this.hrefArr1 = indexLine;
             this.hrefArr2 = indexAgent;
             this.loading = false;
         });
-        fetchIndexBg().then(res => {
-            const res1 = res.filter(item => item.status == 1)
-            let bgUrl = '';
+        fetchIndexBg().then((res) => {
+            const deviceType = isMobile();
+            let dataArr = (deviceType ? res.webType : res.indexType);
+            const res1 = dataArr.filter(
+                (item) => item.status == 1
+            );
+            let bgUrl = "";
             let bgType = 1;
-            if (res1.length !== res.length) {
-                if (res1[0].indexType == 2) {
-                    bgUrl = `http://47.107.229.128/static/uploads/pic/${res1[0].pic}`
+            if (res1.length && res1.length !== dataArr.length) {
+                if (res1[0].indexType == 2 || res1[0].indexType === 4) {
+                    bgUrl = `http://admin.937093.com/static/uploads/pic/${res1[0].pic}`;
                     bgType = 2;
-                } else {
-                    bgUrl = res1[0].video
+                } else if (res1[0].indexType == 1 || res1[0].indexType === 3) {
+                    bgUrl = res1[0].video;
                     bgType = 1;
                 }
             } else {
-                bgUrl = require('@/assets/images/1577654005133740.png')
+                bgUrl = require("@/assets/images/1577654005133740.png");
                 bgType = 2;
             }
             this.bgUrl = bgUrl;
             this.bgType = bgType;
 
             setTimeout(() => {
-                const videoBox = document.querySelector("#videoBox")
+                const videoBox = document.querySelector("#videoBox");
                 if (videoBox) {
-                    if (isMobile()) {
+                    if (deviceType) {
                         videoBox.style.width = "100%";
                         videoBox.style.height = "100%";
                     }
                 }
             }, 800);
-
-        })
-
+        });
     },
-    mounted() {
-    }
+    mounted() {},
 };
 </script>
 

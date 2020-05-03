@@ -3,7 +3,7 @@ module.exports = {
     devServer: {
         proxy: {
             "/api": {
-                target: "http://47.107.229.128",
+                target: process.env.NODE_ENV === 'production' ? "https://admin.92820.cc" : 'http://demo.ixinkexin.com',
                 changeOrigin: true,
                 pathRewrite: {
                     "^/api": "/api"

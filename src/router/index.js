@@ -11,7 +11,7 @@ const routes = [
     component: Index,
     hidden: false,
     meta: {
-      documentTitle: "188HG导航站-188皇冠-线路登陆",
+      documentTitle: "大发娱乐导航站-大发娱乐-线路登陆",
       title: "导航首页",
       vue: true
     }
@@ -25,7 +25,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "detection" */ '../views/Detection.vue'),
     hidden: false,
     meta: {
-      documentTitle: "线路检测-188HG导航站-188皇冠-线路登陆",
+      documentTitle: "线路检测-大发娱乐导航站-大发娱乐-线路登陆",
       title: "线路检测",
       vue: true
     }
@@ -39,7 +39,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "verify" */ '../views/Verify.vue'),
     hidden: false,
     meta: {
-      documentTitle: "域名认证-188HG导航站-188皇冠-线路登陆",
+      documentTitle: "域名认证-大发娱乐导航站-大发娱乐-线路登陆",
       title: "域名认证",
       vue: true
     }
@@ -57,7 +57,7 @@ const router = new VueRouter({
   routes
 })
 router.afterEach((to, from) => {
-  // document.title = to.meta.documentTitle || '188HG导航站-188皇冠-线路登陆'
+  // document.title = to.meta.documentTitle || '大发娱乐导航站-大发娱乐-线路登陆'
 })
 
 export default router
