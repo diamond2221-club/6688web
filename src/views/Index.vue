@@ -501,7 +501,7 @@ export default {
             );
             let bgUrl = "";
             let bgType = 1;
-            if (res1.length && res1.length !== dataArr.length) {
+            if (res1.length) {
                 if (res1[0].indexType == 2 || res1[0].indexType === 4) {
                     bgUrl = `http://admin.937093.com/static/uploads/pic/${res1[0].pic}`;
                     bgType = 2;
